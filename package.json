@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "tsc-watch --onSuccess \"node dist/bin/www.js\""
+    "start": "tsc-watch --onSuccess \"node dist/bin/www\""
   },
   "dependencies": {
     "@types/cookie-parser": "^1.4.2",
