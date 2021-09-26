@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "tsc-watch --onSuccess \"node dist/bin/www\""
+    "build": "tsc --build",
+    "start": "node dist/bin/www",
+    "develop": "DEBUG=express-template:*  tsc-watch --onSuccess  \"node dist/bin/www\""
   },
   "dependencies": {
     "@types/cookie-parser": "^1.4.2",
