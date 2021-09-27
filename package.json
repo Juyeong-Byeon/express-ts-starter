@@ -5,7 +5,8 @@
   "scripts": {
     "build": "tsc --build",
     "start": "node dist/bin/www",
-    "develop": "DEBUG=express-template:*  tsc-watch --onSuccess  \"node dist/bin/www\""
+    "develop": "DEBUG=express-template:* MODE=DEVELOP PORT=8000  tsc-watch --onSuccess  \" npm run start \"",
+    "prod": "DEBUG=express-template:*  MODE=PRODUCT PORT=443 tsc-watch --onSuccess  \" npm run start \""
   },
   "dependencies": {
     "@types/cookie-parser": "^1.4.2",

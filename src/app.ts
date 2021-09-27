@@ -1,6 +1,6 @@
 import cookieParser from 'cookie-parser';
 import createError from 'http-errors';
-import  express from "express";
+import express from "express";
 import indexRouter from './routes/index';
 import logger from 'morgan';
 import path from 'path';
@@ -12,7 +12,10 @@ var app = express();
 app.set('views', './views');
 app.set('view engine', 'pug');
 
-app.use(logger('dev'));
+if(process.env.MODE==='DEVELOP'){
+  app.use(logger('dev'));
+}
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
