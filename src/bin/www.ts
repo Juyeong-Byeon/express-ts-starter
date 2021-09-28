@@ -1,12 +1,6 @@
-#!/usr/bin/env node
-
-/**
- * Module dependencies.
- */
-
-var app = require('../app');
-var debug = require('debug')('express-template:server');
-var http = require('http');
+import {app} from'../app';
+import debug from 'debug';
+import http from 'http';
 
 /**
  * Get port from environment and store in Express.
@@ -86,7 +80,7 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  debug('Listening on ' + bind);
-  debug('MODE:' + process.env.MODE);
+  debug('express-template:server')('Listening on ' + bind);
+  debug('express-template:server')('MODE:' + process.env.MODE);
 
 }
