@@ -1,9 +1,10 @@
+import { DBConfig } from './config';
 import mysql from 'mysql';
 
 const connection = mysql.createConnection({
-	host: 'localhost',
-	user: 'dbuser',
-	password: 's3kreee7',
+	host: DBConfig.host,
+	user: DBConfig.user,
+	password: DBConfig.password,
 });
 
 export default connection;
