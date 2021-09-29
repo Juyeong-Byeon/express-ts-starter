@@ -6,7 +6,7 @@ import logger from 'morgan';
 import path from 'path';
 import resourceRouter from './routes/resource'
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', './views');
@@ -17,7 +17,7 @@ if(process.env.MODE==='DEVELOP'){
 }
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
