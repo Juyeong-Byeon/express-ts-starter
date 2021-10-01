@@ -1,6 +1,14 @@
 import { app } from '../app';
 import debug from 'debug';
+import fs from 'fs';
 import http from 'http';
+import https from 'https';
+
+var sslOptions = {
+	ca: fs.readFileSync('~/ca_bundle.crt'),
+	key: fs.readFileSync('~/private.key'),
+	cert: fs.readFileSync('~/certificate.crt'),
+  };
 
 /**
  * Get port from environment and store in Express.
@@ -13,7 +21,10 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-const server = http.createServer(app);
+const server = process.env.MODE==='PRODUCT'
+	?https.createServer(sslOptions,app)
+	:http.createServer(app);
+
 
 /**
  * Listen on provided port, on all network interfaces.
