@@ -5,9 +5,8 @@ import http from 'http';
 import https from 'https';
 
 var sslOptions = {
-	ca: fs.readFileSync('~/ca_bundle.crt'),
-	key: fs.readFileSync('~/private.key'),
-	cert: fs.readFileSync('~/certificate.crt'),
+	key: fs.readFileSync('./cert/key.pem'),
+	cert: fs.readFileSync('./cert/cert.pem'),
   };
 
 /**
